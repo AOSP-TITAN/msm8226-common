@@ -26,6 +26,16 @@ TARGET_SPECIFIC_HEADER_PATH := $(VENDOR_PATH)/include
 TARGET_BOARD_PLATFORM := msm8226
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno305
 
+#Misc. Optimizations
+CLANG_O3 := true
+STRICT_ALIASING := false
+KRAIT_TUNINGS := true
+GRAPHITE_OPTS := true
+ENABLE_GCCONLY := false
+USE_PIPE := true
+USE_O3_OPTIMIZATIONS=true
+FLOOP_NEST_OPTIMIZE=true
+
 # Architecture
 TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
@@ -90,6 +100,9 @@ EXTENDED_FONT_FOOTPRINT := true
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
 
+# Filesystem
+TARGET_ANDROID_FILESYSTEM_CONFIG_H := $(VENDOR_PATH)/android_filesystem_config.h
+
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 131072
 
@@ -124,9 +137,8 @@ ifeq ($(HOST_OS),linux)
 endif
 
 # SELinux
--include device/qcom/sepolicy/sepolicy.mk
-
-BOARD_SEPOLICY_DIRS += $(VENDOR_PATH)/sepolicy
+include device/qcom/sepolicy/sepolicy.mk
+BOARD_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy
 
 # Wifi
 BOARD_HAS_QCOM_WLAN := true

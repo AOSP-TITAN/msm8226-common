@@ -26,6 +26,9 @@ TARGET_SPECIFIC_HEADER_PATH := $(VENDOR_PATH)/include
 TARGET_BOARD_PLATFORM := msm8226
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno305
 
+# Use Snapdragon LLVM, if available
+TARGET_USE_SDCLANG := true
+
 #Misc. Optimizations
 CLANG_O3 := true
 STRICT_ALIASING := false

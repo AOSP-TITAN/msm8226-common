@@ -26,9 +26,6 @@ TARGET_SPECIFIC_HEADER_PATH := $(VENDOR_PATH)/include
 TARGET_BOARD_PLATFORM := msm8226
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno305
 
-# Use Snapdragon LLVM, if available
-TARGET_USE_SDCLANG := true
-
 #Misc. Optimizations
 CLANG_O3 := true
 STRICT_ALIASING := false
@@ -102,9 +99,6 @@ EXTENDED_FONT_FOOTPRINT := true
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
-
-# Filesystem
-TARGET_ANDROID_FILESYSTEM_CONFIG_H := $(VENDOR_PATH)/android_filesystem_config.h
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 131072

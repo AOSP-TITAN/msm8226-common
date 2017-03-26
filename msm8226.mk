@@ -87,9 +87,6 @@ PRODUCT_PACKAGES += \
     camera.msm8226 \
     SnapdragonCamera
 
-# Bluetooth
-PRODUCT_PROPERTY_OVERRIDES += qcom.bluetooth.soc=smd
-
 # Display
 PRODUCT_PACKAGES += \
     copybit.msm8226 \
